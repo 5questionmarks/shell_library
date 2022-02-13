@@ -285,7 +285,9 @@ function shell_lib:CreateLib()
 						for i,v in next,drop:GetChildren() do
 							if v.Name == "dropitem" then
 								v:TweenSize(UDim2.new(0, 288,0, 31), "Out", "Sine", 0.3, true)
-								v.Text = name
+							end
+							for i,v in next,dropitem:GetChildren()
+							   v.Text = name
 							end
 						end
 						drop.ScrollBarThickness = 8
@@ -293,9 +295,11 @@ function shell_lib:CreateLib()
 						drop:TweenSize(UDim2.new(0, 304,0, 85), "Out", "Sine", 0.3, true)
 					else
 						for i,v in next,drop:GetChildren() do
-							if v.Name == "dropitem" then
-								v.Text = ""
+							for i,v in next,dropitem:GetChildren()
+							   v.Text = ""
+							end
 								wait(0.1)
+							if v.Name == "dropitem" then
 								v:TweenSize(UDim2.new(0, 288,0, 0), "Out", "Sine", 0.3, true)
 								
 							end
