@@ -285,7 +285,7 @@ function shell_lib:CreateLib()
 						for i,v in next,drop:GetChildren() do
 							if v.Name == "dropitem" then
 								v:TweenSize(UDim2.new(0, 288,0, 31), "Out", "Sine", 0.3, true)
-								v.Text = tostring(name)
+								v.Text = name
 							end
 						end
 						drop.ScrollBarThickness = 8
