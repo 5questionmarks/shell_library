@@ -1,7 +1,7 @@
 
 local shell_lib = {}
 
-function shell_lib:CreateLib()
+function shell_lib:CreateLib(name)
 
 	local createtab = {}
 
@@ -14,7 +14,7 @@ function shell_lib:CreateLib()
 	local pagecontents = Instance.new("Frame")
 	local pagelabel = Instance.new("TextLabel")
 
-	shell.Name = "shell"
+	shell.Name = "Shell - " .. name
 	shell.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	shell.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	shell.ResetOnSpawn = false
@@ -80,7 +80,7 @@ function shell_lib:CreateLib()
 	pagelabel.Position = UDim2.new(0.204662919, 0, 0, 0)
 	pagelabel.Size = UDim2.new(0, 358, 0, 50)
 	pagelabel.Font = Enum.Font.GothamSemibold
-	pagelabel.Text = "discord.gg/7Dxa8FQpGa"
+	pagelabel.Text = "Shell - " .. name
 	pagelabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	pagelabel.TextSize = 13.000
 
