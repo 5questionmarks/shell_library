@@ -296,6 +296,7 @@ function shell_lib:CreateLib()
 								v:TweenSize(UDim2.new(0, 288,0, 0), "Out", "Sine", 0.3, true)
 							end
 						end
+						wait(0.4)
 						drop.ScrollBarThickness = 0
 						dropframe:TweenSize(UDim2.new(0, 321,0, 40), "Out", "Sine", 0.3, true)
 						drop:TweenSize(UDim2.new(0, 304,0, 0), "Out", "Sine", 0.3, true)
