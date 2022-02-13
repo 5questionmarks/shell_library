@@ -294,8 +294,10 @@ function shell_lib:CreateLib()
 					else
 						for i,v in next,drop:GetChildren() do
 							if v.Name == "dropitem" then
-								v:TweenSize(UDim2.new(0, 288,0, 0), "Out", "Sine", 0.3, true)
 								v.Text = ""
+								wait(0.1)
+								v:TweenSize(UDim2.new(0, 288,0, 0), "Out", "Sine", 0.3, true)
+								
 							end
 						end
 						wait(0.5)
