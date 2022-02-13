@@ -1,13 +1,10 @@
 local Shell = loadstring(game:HttpGet("https://raw.githubusercontent.com/5questionmarks/shell_library/main/base.lua"))()
 
 local Shell_LIB = Shell:CreateLib("Flex Your Time")
-local MainPage = Shell_LIB:CreateTab("Main")
-
-MainPage:CreateButton("Reach - Gui",function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/ihQ3VDCN"))()
-end)
-
-MainPage:CreateButton("Fly - LeftAlt",function()
+--^ LIB Setup
+local PlayerPage = Shell_LIB:CreateTab("Player")
+--^ Player Page
+PlayerPage:CreateButton("Fly - LeftAlt",function()
     local player = game.Players.LocalPlayer
 	local char = player.Character or player.CharacterAdded:Wait()
 
@@ -90,10 +87,61 @@ MainPage:CreateButton("Fly - LeftAlt",function()
 	end
 end)
 
-MainPage:CreateSlider("WalkSpeed",55,16,function(s)
+PlayerPage:CreateSlider("WalkSpeed",55,16,function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
+PlayerPage:CreateButton("Rejoin",function()
+     local service = game:GetService("TeleportService")
+     local player = game.Players.LocalPlayer
+     local PlaceID = "5278850819"
+     service:Teleport(PlaceID, player)
+end)
+
+local SwordPage = Shell_LIB:CreateTab("Sword")
+--^ SwordPage
+
+SwordPage:CreateSlider("Sword Reach",20,10,function(reachsize)
+    local plr = game.Players.LocalPlayer
+    plr.Character:WaitForChild("Humanoid"):UnequipTools()
+        local tool = plr.Backpack:FindFirstChildOfClass("Tool")
+    if tool.Handle:FindFirstChild("SelectionBox") == nil then
+        local a = Instance.new("SelectionBox",tool.Handle)
+        a.Adornee=tool.Handle
+    end
+    tool.Parent = plr.Backpack
+    tool.Handle.Size = Vector3.new(reachsize,reachsize,reachsize)
+    tool.Handle.Massless = true
+    wait()
+    tool.Parent = plr.Character
+    wait()
+    tool:Activate()
+end)
+
+local ChatPage = Shell_LIB:CreateTab("Chat")
+
+ChatPage:CreateDropDown("Messages",{"Shell Shock on top!","Not hacks, just Gaming Chair.","Hacks? What's that? I'm new.."},function(arg)
+    if arg == "Shell Shock on top!" then
+        local Message = "Shell Shock on top!"
+        local All = "All"
+        local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+        Event:FireServer(Message, All)
+    end
+    if arg == "Not hacks, just Gaming Chair." then
+        local Message = "Not hacks, just Gaming Chair."
+        local All = "All"
+        local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+        Event:FireServer(Message, All)
+    end
+    if arg == "Hacks? What's that? I'm new.." then
+        local Message = "Hacks? What's that? I'm new.."
+        local All = "All"
+        local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+        Event:FireServer(Message, All)
+    end
+end)
+
+--^ Bypass
 function AntiBan()
     local GiftsFolder = game:GetService("Workspace").Gifts
     local MainAc = game.Players.LocalPlayer.Character.Anticheat
@@ -102,24 +150,30 @@ function AntiBan()
     function ChangeMainAcPath()
         MainAc.Parent = GiftsFolder
     end
+
     function RemoveStarterPlayerAC()
+        StarterPlayerAC:Disable()
+        wait(1)
         StarterPlayerAC:Destroy()
     end
-    ChangeMainAcPath()
-    RemoveStarterPlayerAC()
+
+    game:GetService("RunService").RenderStepped:Connect(function() 
+        ChangeMainAcPath()
+        RemoveStarterPlayerAC()
+    end)
     wait(1)
-    print('Removed StarterPlayer AntiCheat, Moved Main AntiCheat Path')
-    print('Enabled Ban Saver')
+    print('Disabled StarterPlayer AntiCheat, Moved Main AntiCheat Path')
     wait()
+    
     local NewAntiCheatPath = game:GetService("Workspace").Gifts.Anticheat
     NewAntiCheatPath:Destroy()
     print('Removed Main AntiCheat')
     while true do wait()
-        if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+    if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
             local service = game:GetService("TeleportService")
             local player = game.Players.LocalPlayer
             local PlaceID = "5278850819"
-        service:Teleport(PlaceID, player)
+            service:Teleport(PlaceID, player)
         end
     end
 end
