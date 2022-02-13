@@ -197,7 +197,7 @@ function shell_lib:CreateLib()
 			local dropdownbtn = Instance.new("ImageButton")
 			
 			local dropitem = Instance.new("ImageButton")
-			--Properties:
+			
 			
 			
 			
@@ -278,13 +278,18 @@ function shell_lib:CreateLib()
 				local dropframe = dropdown_frame
 				local drop = drop
 				local dropitem = dropitem
-			
+				
 				script.Parent.MouseButton1Click:Connect(function()
 					if ready == false then
 						ready = true
 						for i,v in next,drop:GetChildren() do
 							if v.Name == "dropitem" then
 								v:TweenSize(UDim2.new(0, 288,0, 31), "Out", "Sine", 0.3, true)
+								for i,g in next,v:GetChildren() do
+									if g.Name == "drop_label" then
+										g.TextTransparency = 0
+									end
+								end
 							end
 						end
 						drop.ScrollBarThickness = 8
@@ -294,9 +299,14 @@ function shell_lib:CreateLib()
 						for i,v in next,drop:GetChildren() do
 							if v.Name == "dropitem" then
 								v:TweenSize(UDim2.new(0, 288,0, 0), "Out", "Sine", 0.3, true)
+								for i,g in next,v:GetChildren() do
+									if g.Name == "drop_label" then
+										g.TextTransparency = 1
+									end
+								end
 							end
 						end
-						wait(0.6)
+						wait(0.4)
 						drop.ScrollBarThickness = 0
 						dropframe:TweenSize(UDim2.new(0, 321,0, 40), "Out", "Sine", 0.3, true)
 						drop:TweenSize(UDim2.new(0, 304,0, 0), "Out", "Sine", 0.3, true)
@@ -567,5 +577,3 @@ function shell_lib:CreateLib()
 end
 
 return shell_lib
-
-
