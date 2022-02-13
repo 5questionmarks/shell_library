@@ -14,7 +14,7 @@ function shell_lib:CreateLib(name)
 	local pagecontents = Instance.new("Frame")
 	local pagelabel = Instance.new("TextLabel")
 
-	shell.Name = "Shell - " .. name
+	shell.Name = "shell"
 	shell.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	shell.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	shell.ResetOnSpawn = false
