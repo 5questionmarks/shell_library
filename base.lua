@@ -462,7 +462,7 @@ function shell_lib:CreateLib()
 		page_example.BackgroundTransparency = 1.000
 		page_example.BorderSizePixel = 0
 		--UDim2.new(0,0,number,0)
-		page_example.CanvasSize =UDim2.new(0,0,number,0)
+		page_example.CanvasSize =UDim2.new(0,0,number or 5,0)
 		page_example.Position = UDim2.new(0, 0, 0.210999995, 0)
 		page_example.Size = UDim2.new(0, 351, 0, 208)
 		page_example.ScrollBarThickness = 9
