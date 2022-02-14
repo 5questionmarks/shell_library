@@ -36,6 +36,13 @@ MiscPage:CreateButton("Spawn Block (Do Once)",function()
     game.Players.LocalPlayer.Character.Humanoid.Torso.CFrame = CFrame.new(3.89764, 6.0017, 0.220905)
 
 end)
+MiscPage:CreateButton("Anti Afk",function()
+	game:service'Players'.LocalPlayer.Idled:connect(function()
+		local V_User =game:service'VirtualUser'
+		V_User:CaptureController()
+	end)
+   print('antiafk: ' .. tostring(game.Players.LocalPlayer))
+end)
 
 MiscPage:CreateButton("Server Hop",function()
     local service = game:GetService("TeleportService")
