@@ -32,7 +32,7 @@ MiscPage:CreateButton("Spawn Block (Do Once)",function()
     Part.Size = Vector3.new(1000,1,1000)
     Part.Position = Vector3.new(3.89764, 6.0017, 0.220905)
     Part.Transparency = 0.5
-    wait()
+    wait(1)
     game.Players.LocalPlayer.Character.Humanoid.Torso.CFrame = CFrame.new(3.89764, 6.0017, 0.220905)
 
 end)
