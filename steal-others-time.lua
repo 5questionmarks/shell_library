@@ -1,10 +1,10 @@
-local Shell = loadstring(game:HttpGet("https://raw.githubusercontent.com/5questionmarks/shell_library/main/base.lua"))() 
+local Shell = loadstring(game:HttpGet("https://raw.githubusercontent.com/5questionmarks/shell_library/main/base.lua"))()  
 
 local Shell_LIB = Shell:CreateLib("Steal Others Time")
 
 local SwordPage = Shell_LIB:CreateTab("Sword",3)
 
-SwordPage:CreateSlider("Sword Reach",20,10,function(reachsize)
+SwordPage:CreateSlider("Sword Reach",50,20,function(reachsize)
     local plr = game.Players.LocalPlayer
     plr.Character:WaitForChild("Humanoid"):UnequipTools()
         local tool = plr.Backpack:FindFirstChildOfClass("Tool")
