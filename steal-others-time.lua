@@ -13,9 +13,7 @@ SwordPage:CreateSlider("Sword Reach",20,10,function(reachsize)
         a.Adornee=tool.Handle
     end
     tool.Parent = plr.Backpack
-    while true do wait()
-	 tool.Handle.Size = Vector3.new(reachsize,reachsize,reachsize)
-    end
+    tool.Handle.Size = Vector3.new(reachsize,reachsize,reachsize)
     tool.Handle.Massless = true
     wait()
     tool.Parent = plr.Character
