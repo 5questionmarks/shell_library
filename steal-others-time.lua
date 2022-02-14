@@ -5,7 +5,7 @@ local Shell_LIB = Shell:CreateLib("Steal Others Time")
 
 local SwordPage = Shell_LIB:CreateTab("Sword",3)
 
-SwordPage:CreateSlider("Sword Reach",50,20,function(reachsize)
+SwordPage:CreateSlider("Sword Reach",20,5,function(reachsize)
     local plr = game.Players.LocalPlayer
     plr.Character:WaitForChild("Humanoid"):UnequipTools()
         local tool = plr.Backpack:FindFirstChildOfClass("Tool")
