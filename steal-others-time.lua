@@ -41,7 +41,7 @@ end)
 MiscPage:CreateButton("Server Hop",function()
     local service = game:GetService("TeleportService")
     local player = game.Players.LocalPlayer
-    local PlaceID = "5278850819"
+    local PlaceID = "6361937392"
     service:Teleport(PlaceID, player)
 end)
 
