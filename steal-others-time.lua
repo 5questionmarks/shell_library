@@ -1,3 +1,4 @@
+print('Shell Loaded')
 local Shell = loadstring(game:HttpGet("https://raw.githubusercontent.com/5questionmarks/shell_library/main/base.lua"))()  
 
 local Shell_LIB = Shell:CreateLib("Steal Others Time")
