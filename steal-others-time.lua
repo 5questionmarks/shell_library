@@ -34,7 +34,8 @@ MiscPage:CreateButton("Spawn Block (Do Once)",function()
     Part.Transparency = 0.5
     wait(1)
     game.Players.LocalPlayer.Character.Humanoid.Torso.CFrame = CFrame.new(3.89764, 6.0017, 0.220905)
-
+    wait(1)
+    game.Players.LocalPlayer.Character.Humanoid.Torso.CFrame = CFrame.new(-5.39735508, 12.8283367, -487.432007, -0.99995482, 0.00712524401, 0.0062773861, 0.00712538464, 0.999974608, 1.17231224e-07, -0.00627722591, 4.48460232e-05, -0.999980211)
 end)
 MiscPage:CreateButton("Anti Afk",function()
 	game:service'Players'.LocalPlayer.Idled:connect(function()
