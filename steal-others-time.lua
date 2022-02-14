@@ -13,7 +13,7 @@ SwordPage:CreateSlider("Sword Reach",20,10,function(reachsize)
         a.Adornee=tool.Handle
     end
     tool.Parent = plr.Backpack
-    game:GetService("RunService").RenderStepped:Connect:function()
+    game:GetService("RunService").RenderStepped:Connect(function() 
         tool.Handle.Size = Vector3.new(reachsize,reachsize,reachsize)
     end)
     tool.Handle.Massless = true
