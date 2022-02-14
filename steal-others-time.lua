@@ -45,6 +45,7 @@ MiscPage:CreateButton("Anti Afk",function()
 end)
 
 MiscPage:CreateButton("Server Hop",function()
+    wait(3)
     local service = game:GetService("TeleportService")
     local player = game.Players.LocalPlayer
     local PlaceID = "6361937392"
