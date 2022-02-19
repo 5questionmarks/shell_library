@@ -285,7 +285,7 @@ function shell_lib:CreateLib(name)
 						drop.ScrollBarThickness = 8
 						dropframe:TweenSize(UDim2.new(0, 321,0, 150), "Out", "Sine", 0.3, true)
 						drop:TweenSize(UDim2.new(0, 304,0, 85), "Out", "Sine", 0.3, true)
-							wait(0.4)
+							wait(0.3)
 						for i,v in next,drop:GetChildren() do
 							if v.Name == "dropitem" then
 								v:TweenSize(UDim2.new(0, 288,0, 31), "Out", "Sine", 0.3, true)
@@ -307,7 +307,7 @@ function shell_lib:CreateLib(name)
 								end
 							end
 						end
-						wait(0.4)
+						wait(0.3)
 						drop.ScrollBarThickness = 0
 						dropframe:TweenSize(UDim2.new(0, 321,0, 40), "Out", "Sine", 0.3, true)
 						drop:TweenSize(UDim2.new(0, 304,0, 0), "Out", "Sine", 0.3, true)
